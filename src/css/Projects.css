@@ -139,6 +139,7 @@
     .ProjectImgTag{
         width: 200px;
         height: auto;
+        border-radius: 30px;
     }
     .ProjectInfo{
         width: 500px;
@@ -156,11 +157,13 @@
         font-size: 36px;
     }
     .PreView{
-        align-self: center;
+        display: flex;
+        justify-content: space-between;
     }
   }
   @media (max-width: 545px) {  
     .ProjectHeader{
+        margin-top: 10px;
         margin-bottom: 10px;
     }
     .Project{

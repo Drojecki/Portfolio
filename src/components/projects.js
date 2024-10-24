@@ -24,7 +24,7 @@ const Projects = forwardRef((props, ref) => {
                 <div className='Project testtest'>
                     <div className='ProjectInfo'>
                         <div className='ProjectHeader'>
-                            <p className='ProjectName'>NFC TagApp</p>
+                            <p className='ProjectName'>NFC TagApps</p>
                             <a target='_' href='https://github.com/pleewson/NFC-SocialApp-DisStream'>
                                 <p>repository</p>
                             </a>

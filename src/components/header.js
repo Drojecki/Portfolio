@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header({ currentSection, scrollToProjects, scrollToHome }) {
+function Header({ currentSection, scrollToProjects, scrollToHome, scrollToContact }) {
     return (
         <>
             <div className='header'>
@@ -13,7 +13,7 @@ function Header({ currentSection, scrollToProjects, scrollToHome }) {
                             PROJECTS
                         </p>
                         <p>ABOUT ME</p>
-                        <p>CONTACT</p>
+                        <p onClick={scrollToContact} style={{ cursor: 'pointer', color: currentSection === 'CONTACT' ? '#C51DCE' : '' }}>CONTACT</p>
                     </div>
                     <div className='headerName'>
                         <a href='./'>

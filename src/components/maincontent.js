@@ -1,13 +1,30 @@
 import React, { useRef, useEffect } from 'react';
 import '../css/maincontent.css'
 import Projects from './projects';
-function Maincontent({ setCurrentSection , introductionRef}) {
+import Contact from './contact';
+
+function Maincontent({ setCurrentSection , introductionRef, contactRef}) {
     const projectsRef = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
+            (entries) => {
+                let isProjectVisible = false;
+                let isContactVisible = false;
+    
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target === projectsRef.current) {
+                            isProjectVisible = true;
+                        } else if (entry.target === contactRef.current) {
+                            isContactVisible = true;
+                        }
+                    }
+                });
+    
+                if (isContactVisible) {
+                    setCurrentSection('CONTACT');
+                } else if (isProjectVisible) {
                     setCurrentSection('PROJECTS');
                 } else {
                     setCurrentSection('HOME');
@@ -15,17 +32,23 @@ function Maincontent({ setCurrentSection , introductionRef}) {
             },
             { threshold: 0.4 }
         );
-
+    
         if (projectsRef.current) {
             observer.observe(projectsRef.current);
         }
-
+        if (contactRef.current) {
+            observer.observe(contactRef.current);
+        }
+    
         return () => {
             if (projectsRef.current) {
                 observer.unobserve(projectsRef.current);
             }
+            if (contactRef.current) {
+                observer.unobserve(contactRef.current);
+            }
         };
-    }, [setCurrentSection]);
+    });
     return (
         <>
             <div className='maincontent'>
@@ -58,6 +81,7 @@ function Maincontent({ setCurrentSection , introductionRef}) {
                     <div className='line right'></div>
                 </div>
                 <Projects ref={projectsRef} />
+                <Contact ref={contactRef} />
             </div>
         </>
     );

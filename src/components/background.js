@@ -5,6 +5,7 @@ import Maincontent from './maincontent';
 function Background() {
   const [currentSection, setCurrentSection] = useState('HOME');
   const introductionRef = useRef(null);
+  const contactRef = useRef(null);
   useEffect(() => {
     setCurrentSection('HOME');
 }, []);
@@ -16,10 +17,15 @@ const scrollToHome = () => {
       introductionRef.current.scrollIntoView({ behavior: 'smooth' });
   }
 };
+const scrollToContact = () => {
+  if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+  }
+};
   return (
     <div className="background">
-      <Header scrollToHome={scrollToHome} scrollToProjects={scrollToProjects} currentSection={currentSection}/>
-      <Maincontent setCurrentSection={setCurrentSection} introductionRef={introductionRef} /> {/* Przekazujemy introductionRef */}
+      <Header scrollToHome={scrollToHome} scrollToProjects={scrollToProjects} scrollToContact={scrollToContact} currentSection={currentSection}/>
+      <Maincontent setCurrentSection={setCurrentSection} introductionRef={introductionRef} contactRef={contactRef} />
     </div>
   );
 }
