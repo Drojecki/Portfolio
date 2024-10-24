@@ -6,6 +6,7 @@ p{
   flex-direction: column;
   overflow: hidden; 
   height: 100vh; 
+  height: 100dvh; 
   background: linear-gradient(
     to bottom,        
     #373640 13%,       
@@ -65,4 +66,58 @@ p{
     display: contents;
     text-decoration: none;
     color: #C51DCE;
+  }
+  @media (max-width: 1440px) {
+    .headerName{
+      padding-right: 10px;
+    }
+    .headerContent{
+      padding-left: 10px;
+    }
+  }
+  @media (max-width: 850px) {
+    .headerName{
+      font-size: 16px;
+    }
+    .headerIntroduction{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 630px) {
+    .headerName{
+      font-size: 12px;
+    }
+    .headerIntroduction{
+      font-size: 12px;
+    }
+    .LogoImg{
+      width: 40px;
+      height: 40px;
+    }
+    .header {
+      height: 70px;
+    }
+    .headerContent{
+      height: 70px;
+    }
+  }
+  @media (max-width: 500px) {
+    .headerName{
+      font-size: 10px;
+      gap: 5px;
+    }
+    .headerIntroduction{
+      font-size: 10px;
+      gap: 10px;
+    }
+    .LogoImg{
+      width: 40px;
+      height: 40px;
+    }
+    .header {
+      height: 70px;
+    }
+    .headerContent{
+      height: 70px;
+    }
   }
