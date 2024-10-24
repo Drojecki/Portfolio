@@ -1,6 +1,14 @@
 p{
     margin: 0;
 }
+.highlight {
+  color: #007BFF;
+  font-weight: bold;
+}
+.headerIntroduction p {
+  transition: color 0.3s ease;
+}
+
 .background {
   display: flex;
   flex-direction: column;

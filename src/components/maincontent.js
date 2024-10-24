@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import '../css/maincontent.css'
+import Projects from './projects';
+function Maincontent({ setCurrentSection , introductionRef}) {
+    const projectsRef = useRef(null);
 
-function Maincontent() {
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setCurrentSection('PROJECTS');
+                } else {
+                    setCurrentSection('HOME');
+                }
+            },
+            { threshold: 0.4 }
+        );
+
+        if (projectsRef.current) {
+            observer.observe(projectsRef.current);
+        }
+
+        return () => {
+            if (projectsRef.current) {
+                observer.unobserve(projectsRef.current);
+            }
+        };
+    }, [setCurrentSection]);
     return (
         <>
             <div className='maincontent'>
-                <div className='introduction'>
+                <div ref={introductionRef} className='introduction'>
                     <div className='introductionText'>
                         <p className='HeaderIntText'>Introduction</p>
                         <p>I'm a Fullstack Developer with experience in building web applications, specializing in React, JavaScript, and Angular.<br /> I have strong analytical skills, creativity, and the ability to work effectively under pressure.</p>
@@ -33,6 +57,7 @@ function Maincontent() {
                     <div className='line left'></div>
                     <div className='line right'></div>
                 </div>
+                <Projects ref={projectsRef} />
             </div>
         </>
     );

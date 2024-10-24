@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './header';
 import Maincontent from './maincontent';
+
 function Background() {
-    return (
-      <div className="background">
-        <div>
-            <Header/>
-        </div>
-          <Maincontent/>
-      </div>
-    );
+  const [currentSection, setCurrentSection] = useState('HOME');
+  const introductionRef = useRef(null);
+  useEffect(() => {
+    setCurrentSection('HOME');
+}, []);
+const scrollToProjects = () => {
+  document.querySelector('.containerProjects').scrollIntoView({ behavior: 'smooth' });
+};
+const scrollToHome = () => {
+  if (introductionRef.current) {
+      introductionRef.current.scrollIntoView({ behavior: 'smooth' });
   }
-  
-  export default Background;
+};
+  return (
+    <div className="background">
+      <Header scrollToHome={scrollToHome} scrollToProjects={scrollToProjects} currentSection={currentSection}/>
+      <Maincontent setCurrentSection={setCurrentSection} introductionRef={introductionRef} /> {/* Przekazujemy introductionRef */}
+    </div>
+  );
+}
+
+export default Background;

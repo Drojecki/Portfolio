@@ -32,8 +32,6 @@
 
 .introductionImg {
   margin-top: 50px;
-  /* display: flex;
-    margin: auto; */
 }
 
 .LogoImgIntroduction {
@@ -43,7 +41,6 @@
 }
 
 .techStack {
-  /* width: 1440px; */
   width: 100%;
   display: flex;
   justify-content: center;

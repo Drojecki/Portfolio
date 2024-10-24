@@ -1,0 +1,191 @@
+.ProjectImg{
+    width: auto;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
+}
+.ProjectInfo{
+    width: 600px;
+}
+.containerProjects{
+    margin-top: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.Project{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 100px;
+    flex-direction: row;
+}
+.ProjectName{
+    color: #C51DCE;
+    font-size: 36px;
+}
+.ProjectHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ProjectHeader a{
+    color: white;
+}
+.displayFlex{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+.Front{
+    font-size: 30px;
+}
+.displayRuby{
+    display: ruby;
+    font-size: 24px;
+}
+.ProjectImgTag{
+    width: auto;
+    height: 220px;
+    border-radius: 50px;
+    margin-right: 10px;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
+}
+.ProjectImg, .ProjectImgTag {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ProjectImg:hover, .ProjectImgTag:hover {
+    transform: scale(1.05);
+}
+@media (max-width: 1185px) {
+    .ProjectImgTag{
+        height: 180px;
+    }
+    .ProjectImg{
+        height: 250px;
+    }
+    .Front{
+        font-size: 26px;
+    }
+    .displayRuby{
+        font-size: 18px;
+    }
+    .ProjectName{
+        font-size: 30px;
+    }
+    .ProjectInfo{
+        width: 500px;
+    }
+  }
+  @media (max-width: 1000px) {  
+    .ProjectInfo{
+        width: 300px;
+    }
+    .displayFlex{
+        display: ruby;
+        font-size: 20px;
+    }
+    .displayRuby{
+        display: block;
+        font-size: 20px;
+    }
+  }
+  @media (max-width: 900px) {  
+    .ProjectImg{
+        height: 200px;
+    }
+  }
+  @media (max-width: 800px) {  
+    .ProjectImgTag{
+        height: 150px;
+    }
+    .Front{
+        font-size: 20px;
+    }
+    .displayFlex{
+        font-size: 16px;
+    }
+    .displayRuby{
+        font-size: 16px;
+    }
+    .ProjectName{
+        font-size: 24px;
+    }
+    .ProjectInfo{
+        width: 250px;
+    }
+    .ProjectImg{
+        height: 150px;
+    }
+  }
+  @media (max-width: 690px) {  
+    .containerProjects{
+        place-items: center;
+    }
+    .Project{
+        justify-items: center;
+        width: 500px;
+    }
+    .testPHP{
+        display: block;
+    }
+    .ProjectImg{
+        width: 500px;
+        height: auto;
+    }
+    .testtest{
+        flex-direction: column-reverse !important;
+    }
+    .ProjectImgTag{
+        width: 200px;
+        height: auto;
+    }
+    .ProjectInfo{
+        width: 500px;
+    }
+    .Front{
+        font-size: 32px;
+    }
+    .displayFlex{
+        font-size: 24px;
+    }
+    .displayRuby{
+        font-size: 24px;
+    }
+    .ProjectName{
+        font-size: 36px;
+    }
+    .PreView{
+        align-self: center;
+    }
+  }
+  @media (max-width: 545px) {  
+    .ProjectHeader{
+        margin-bottom: 10px;
+    }
+    .Project{
+        width: 300px;
+    }
+    .ProjectImg{
+        width: 300px;
+    }
+    .ProjectImgTag{
+        width: 100px;
+    }
+    .ProjectInfo{
+        width: 300px;
+    }
+    .Front{
+        font-size: 20px;
+    }
+    .displayFlex{
+        font-size: 16px;
+    }
+    .displayRuby{
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    .ProjectName{
+        font-size: 22px;
+    }
+  }
