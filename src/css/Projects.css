@@ -4,6 +4,37 @@
     border-radius: 20px;
     box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
 }
+.LineSP{
+    width: 800px;
+    height: 5px;
+    background: linear-gradient(to right, transparent, white, transparent);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.SPContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    justify-self: center;
+}
+.SmallProjectDisplay{
+    box-sizing: border-box;
+    display: flex;
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    margin-top: 20px;
+}
+.Title{
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+.SmallProjects{
+    text-align: center;
+}
 .ProjectInfo{
     width: 600px;
 }

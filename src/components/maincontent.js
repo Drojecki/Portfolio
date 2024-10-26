@@ -3,7 +3,7 @@ import '../css/maincontent.css'
 import Projects from './projects';
 import Contact from './contact';
 
-function Maincontent({ setCurrentSection , introductionRef, contactRef}) {
+function Maincontent({ setCurrentSection, introductionRef, contactRef }) {
     const projectsRef = useRef(null);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ function Maincontent({ setCurrentSection , introductionRef, contactRef}) {
             (entries) => {
                 let isProjectVisible = false;
                 let isContactVisible = false;
-    
+
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         if (entry.target === projectsRef.current) {
@@ -21,7 +21,7 @@ function Maincontent({ setCurrentSection , introductionRef, contactRef}) {
                         }
                     }
                 });
-    
+
                 if (isContactVisible) {
                     setCurrentSection('CONTACT');
                 } else if (isProjectVisible) {
@@ -32,14 +32,14 @@ function Maincontent({ setCurrentSection , introductionRef, contactRef}) {
             },
             { threshold: 0.4 }
         );
-    
+
         if (projectsRef.current) {
             observer.observe(projectsRef.current);
         }
         if (contactRef.current) {
             observer.observe(contactRef.current);
         }
-    
+
         return () => {
             if (projectsRef.current) {
                 observer.unobserve(projectsRef.current);

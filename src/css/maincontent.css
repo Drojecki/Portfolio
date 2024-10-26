@@ -1,14 +1,12 @@
 .maincontent {
+  margin-top: 90px;
   width: 100%;
   max-width: 1440px;
-  overflow-y: auto;
   flex-grow: 1 !important;
   height: 100%;
   align-self: center;
   font-family: 'Aldrich', sans-serif;
   color: white;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
 .introductionText {
@@ -57,7 +55,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width:  100%;
+  width: 100%;
   margin-top: 20px;
 }
 
@@ -75,12 +73,14 @@
   margin-right: 50px;
   background: linear-gradient(to left, rgb(255, 255, 255), transparent);
 }
+
 @media (max-width: 1440px) {
-  .introduction{
+  .introduction {
     margin-left: 10px;
     margin-right: 10px;
   }
 }
+
 @media (max-width: 1300px) {
   .techStack {
     width: 100%;
@@ -90,38 +90,47 @@
     gap: 40px;
   }
 }
+
 @media (max-width: 1060px) {
   .techStack {
     display: block;
     text-align: -webkit-center;
   }
-  .introductionText{
-    font-size: 24px ;
+
+  .introductionText {
+    font-size: 24px;
     width: 460px;
   }
-  .introduction{
+
+  .introduction {
     align-items: center;
     margin-bottom: 50px;
   }
+
   .introductionImg {
     margin-top: 0px;
   }
 }
+
 @media (max-width: 570px) {
-  .introductionText{
+  .introductionText {
     align-content: center;
     font-size: 16px;
     letter-spacing: 1px;
   }
-  .introduction{
+
+  .introduction {
     margin-top: 30px;
   }
-  .HeaderIntText{
+
+  .HeaderIntText {
     font-weight: bold;
   }
+
   .LogoImgIntroduction {
     height: 200px;
   }
+
   .TechImg {
     height: 60px;
     padding: 5px;

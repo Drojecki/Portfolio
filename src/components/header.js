@@ -12,7 +12,6 @@ function Header({ currentSection, scrollToProjects, scrollToHome, scrollToContac
                         <p onClick={scrollToProjects} style={{ cursor: 'pointer', color: currentSection === 'PROJECTS' ? '#C51DCE' : '' }}>
                             PROJECTS
                         </p>
-                        <p>ABOUT ME</p>
                         <p onClick={scrollToContact} style={{ cursor: 'pointer', color: currentSection === 'CONTACT' ? '#C51DCE' : '' }}>CONTACT</p>
                     </div>
                     <div className='headerName'>
