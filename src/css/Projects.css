@@ -2,7 +2,11 @@
     width: auto;
     height: 300px;
     border-radius: 20px;
-    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+}
+.x{
+    width: 180px;
+    height: 180px;
 }
 .LineSP{
     width: 800px;
@@ -11,6 +15,10 @@
     display: flex;
     justify-content: center;
     margin: auto;
+}
+.projectTitle{
+    margin-bottom: 5px;
+    font-size: 20px;
 }
 .SPContainer{
     display: flex;
@@ -23,10 +31,12 @@
 .SmallProjectDisplay{
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 180px;
-    height: 180px;
-    background-color: white;
+    height: auto;
     margin-top: 20px;
+    text-align: center;
 }
 .Title{
     margin-bottom: 20px;
@@ -35,13 +45,21 @@
 .SmallProjects{
     text-align: center;
 }
+.ProjectsText{
+    margin-bottom: 50px;
+    text-align: center;
+}
 .ProjectInfo{
     width: 600px;
 }
-.containerProjects{
-    margin-top: 200px;
+.containerProjects {
+    flex-grow: 1;
+    padding-top: 100px;
+    min-height: 100vh;
+    margin-top: 50px;
     margin-left: 50px;
     margin-right: 50px;
+    overflow: hidden;
 }
 .Project{
     display: flex;
@@ -79,13 +97,13 @@
     height: 220px;
     border-radius: 50px;
     margin-right: 10px;
-    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
 }
-.ProjectImg, .ProjectImgTag {
+.ProjectImg, .ProjectImgTag, .x {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ProjectImg:hover, .ProjectImgTag:hover {
+.ProjectImg:hover, .ProjectImgTag:hover, .x:hover {
     transform: scale(1.05);
 }
 @media (max-width: 1185px) {
@@ -125,6 +143,9 @@
     .ProjectImg{
         height: 200px;
     }
+    .LineSP{
+        width: 95%;
+    }
   }
   @media (max-width: 800px) {  
     .ProjectImgTag{
@@ -152,6 +173,12 @@
   @media (max-width: 690px) {  
     .containerProjects{
         place-items: center;
+    }
+    .ProjectsText{
+        width: 95%;
+    }
+    .SmallProjects{
+        width: 95%;
     }
     .Project{
         justify-items: center;
@@ -193,6 +220,14 @@
     }
   }
   @media (max-width: 545px) {  
+    .x{
+        width: 130px;
+        height: 130px;
+    }
+    .SmallProjectDisplay{
+        width: 130px;
+        height: auto;
+    }
     .ProjectHeader{
         margin-top: 10px;
         margin-bottom: 10px;

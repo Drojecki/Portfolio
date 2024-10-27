@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react';
 import '../css/contact.css';
-
 const Contact = forwardRef((props, contactRef) => {
     return (
         <>
@@ -16,7 +15,7 @@ const Contact = forwardRef((props, contactRef) => {
                         <p>Phone: +48 503-538-226</p>
                         <p>Linkedin: <a href='https://www.linkedin.com/in/juliusz-drojecki/'>linkedin.com/in/juliusz-drojecki/</a></p>
                         <p>Github: <a href='https://github.com/Drojecki'>github.com/Drojecki</a></p>
-                        <p className='Resume'>&rarr;<a href="/Resume/Juliusz Drojecki.pdf" target="_blank" rel="noopener noreferrer">
+                        <p className='Resume'><a href="/Resume/Juliusz Drojecki.pdf" target="_blank" rel="noopener noreferrer">
                             Resume
                         </a></p>
                     </div>

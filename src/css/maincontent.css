@@ -1,5 +1,4 @@
 .maincontent {
-  margin-top: 90px;
   width: 100%;
   max-width: 1440px;
   flex-grow: 1 !important;
@@ -7,8 +6,15 @@
   align-self: center;
   font-family: 'Aldrich', sans-serif;
   color: white;
+  padding-top: 100px;
 }
-
+.gitlinked{
+  display: flex;
+    flex-direction: row-reverse;
+    margin-right: 50px;
+    gap: 20px;
+    margin-bottom: 5px;
+}
 .introductionText {
   width: 620px;
   height: 367px;
@@ -20,7 +26,7 @@
   margin-top: 50px;
   display: flex;
   justify-content: space-between !important;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
 }
 
 .HeaderIntText {
@@ -51,14 +57,15 @@
   width: auto;
 }
 
-.lineContainer {
+.lineContainer, .Line1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+.Line1{
   margin-top: 20px;
 }
-
 .line {
   height: 2px;
   width: 30%;
@@ -113,14 +120,18 @@
 }
 
 @media (max-width: 570px) {
+  .maincontent{
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+  .introduction {
+    margin-top: 80px;
+    margin-bottom: 10px;
+  }
   .introductionText {
     align-content: center;
     font-size: 16px;
     letter-spacing: 1px;
-  }
-
-  .introduction {
-    margin-top: 30px;
   }
 
   .HeaderIntText {
