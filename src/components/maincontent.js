@@ -1,76 +1,67 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../css/maincontent.css'
 import Projects from './projects';
 import Contact from './contact';
 
 function Maincontent({ setCurrentSection, introductionRef, contactRef, projectRef }) {
-    let currentSection = 'HOME';
+    const currentSectionRef = useRef('HOME');
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
-                let newSection = currentSection;
+                let newSection = currentSectionRef.current;
 
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         if (entry.target === projectRef.current) {
                             newSection = 'PROJECTS';
-                            console.log("PROJects");
                         } else if (entry.target === contactRef.current) {
                             newSection = 'CONTACT';
-                            console.log("contact");
                         } else if (entry.target === introductionRef.current) {
                             newSection = 'HOME';
-                            console.log("home");
                         }
                     }
                 });
 
-                currentSection = newSection; 
-                setCurrentSection(currentSection);
-
-                // const isMobile = window.matchMedia("(max-width: 768px)").matches;
-                // if (isMobile) {
-                //     const anySectionVisible = entries.some(entry => entry.isIntersecting);
-                //     console.log('Czy jakakolwiek sekcja jest widoczna:', anySectionVisible);
-                
-                //     if (!anySectionVisible) {
-                //         console.log('Żadna sekcja nie jest widoczna. Ustawienie sekcji na PROJECTS.');
-                //         setCurrentSection('PROJECTS');
-                //     } else {
-                //         console.log('Wykryta sekcja:', currentSection); 
-                //     }
-                // }
+                if (newSection !== currentSectionRef.current) {
+                    currentSectionRef.current = newSection;
+                    setCurrentSection(newSection);
+                }
             },
             { threshold: 0.4 }
         );
 
-        if (projectRef.current) {
-            observer.observe(projectRef.current);
+        const projectNode = projectRef.current;
+        const contactNode = contactRef.current;
+        const introductionNode = introductionRef.current;
+
+        if (projectNode) {
+            observer.observe(projectNode);
         }
-        if (contactRef.current) {
-            observer.observe(contactRef.current);
+        if (contactNode) {
+            observer.observe(contactNode);
         }
-        if (introductionRef.current) {
-            observer.observe(introductionRef.current);
+        if (introductionNode) {
+            observer.observe(introductionNode);
         }
 
         return () => {
-            if (projectRef.current) {
-                observer.unobserve(projectRef.current);
+            if (projectNode) {
+                observer.unobserve(projectNode);
             }
-            if (contactRef.current) {
-                observer.unobserve(contactRef.current);
+            if (contactNode) {
+                observer.unobserve(contactNode);
             }
-            if (introductionRef.current) {
-                observer.unobserve(introductionRef.current);
+            if (introductionNode) {
+                observer.unobserve(introductionNode);
             }
         };
     }, [setCurrentSection, projectRef, contactRef, introductionRef]);
+
     return (
         <>
             <div ref={introductionRef} className='maincontent'>
-                <div  className='introduction'>
+                <div className='introduction'>
                     <div className='introductionText'>
                         <p className='HeaderIntText'>Introduction</p>
                         <p>I'm a Fullstack Developer with experience in building web applications, specializing in React, JavaScript, and Angular.<br /> I have strong analytical skills, creativity, and the ability to work effectively under pressure.</p>
@@ -80,8 +71,12 @@ function Maincontent({ setCurrentSection, introductionRef, contactRef, projectRe
                     </div>
                 </div>
                 <div className='gitlinked'>
-                <img className='Gitimg' src="/Links/Github.png" alt="Logo" />
-                <img className='Gitimg' src="/Links/Linkedin.png" alt="Logo" />
+                    <a target='_' href='https://github.com/Drojecki'>
+                        <img className='Gitimg' src="/Links/Github.png" alt="Logo" />
+                    </a>
+                    <a target='_' href='https://www.linkedin.com/in/juliusz-drojecki/'>
+                        <img className='Gitimg' src="/Links/Linkedin.png" alt="Logo" />
+                    </a>
                 </div>
                 <div className='lineContainer'>
                     <div className='line left'></div>

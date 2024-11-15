@@ -10,7 +10,7 @@ const Contact = forwardRef((props, contactRef) => {
                 <div className='lineContainerContact'>
                     <div className='lineContact leftContact'></div>
                     <div className='content'>
-                        <img src='./Contact/Name.png' />
+                        <img src='./Contact/Name.png' alt='Name' />
                         <p>E-mail: juliusz.drojecki@gmail.com</p>
                         <p>Phone: +48 503-538-226</p>
                         <p>Linkedin: <a href='https://www.linkedin.com/in/juliusz-drojecki/'>linkedin.com/in/juliusz-drojecki/</a></p>
