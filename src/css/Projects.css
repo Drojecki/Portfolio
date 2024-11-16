@@ -45,6 +45,9 @@
 .SmallProjects{
     text-align: center;
 }
+.pointer{
+    cursor: pointer;
+}
 .ProjectsText{
     margin-bottom: 50px;
     text-align: center;

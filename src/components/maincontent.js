@@ -3,7 +3,7 @@ import '../css/maincontent.css'
 import Projects from './projects';
 import Contact from './contact';
 
-function Maincontent({ setCurrentSection, introductionRef, contactRef, projectRef }) {
+function Maincontent({ setCurrentSection, introductionRef, contactRef, projectRef, onSelectProject }) {
     const currentSectionRef = useRef('HOME');
 
     useEffect(() => {
@@ -98,7 +98,7 @@ function Maincontent({ setCurrentSection, introductionRef, contactRef, projectRe
                     <div className='line right'></div>
                 </div>
                 <div>
-                    <Projects ref={projectRef} />
+                    <Projects ref={projectRef} onSelectProject={onSelectProject}/>
                 </div>
                 <div>
                     <Contact ref={contactRef} />

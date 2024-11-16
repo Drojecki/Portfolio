@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Header from './header';
 import Maincontent from './maincontent';
 
-function Background() {
+function Background({ onSelectProject }) {
   const [currentSection, setCurrentSection] = useState('HOME');
   const projectRef = useRef(null);
   const contactRef = useRef(null);
@@ -31,7 +31,7 @@ const scrollToContact = () => {
   return (
     <div className="background">
       <Header scrollToHome={scrollToHome} scrollToProjects={scrollToProjects} scrollToContact={scrollToContact} currentSection={currentSection} />
-      <Maincontent setCurrentSection={setCurrentSection} introductionRef={introductionRef} contactRef={contactRef} projectRef={projectRef} />
+      <Maincontent onSelectProject={onSelectProject} setCurrentSection={setCurrentSection} introductionRef={introductionRef} contactRef={contactRef} projectRef={projectRef} />
     </div>
   );
 }

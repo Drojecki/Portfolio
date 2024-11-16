@@ -1,17 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
 import './App.css';
 import Background from './components/background';
 import Chess from './components/chess';
 
 function App() {
+  const [selectedProject, setSelectedProject] = useState('Background');
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Background />} />
-        <Route path="/Chess" element={<Chess />} />
-      </Routes>
-    </Router>
+    <div>
+      {selectedProject === 'Background' && (
+        <Background onSelectProject={(project) => setSelectedProject(project)} />
+      )}
+      {selectedProject === 'Chess' && (
+        <Chess onBack={() => setSelectedProject('Background')} />
+      )}
+    </div>
   );
 }
 

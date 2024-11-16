@@ -1,23 +1,17 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../css/Chess.css';
 import { FaClipboard, FaCheckCircle, FaArrowLeft } from 'react-icons/fa';
-
-const Chess = () => {
+const Chess = ({ onBack }) => {
     const [copied, setCopied] = useState(null);
     const [modalImage, setModalImage] = useState(null);
-    const navigate = useNavigate();
-
-    const handleGoBack = () => {
-        navigate('/');
-    };
+    
 
     const handleCopy = (text, id) => {
         navigator.clipboard.writeText(text).then(() => {
             setCopied(id);
             setTimeout(() => setCopied(null), 1500);
         }).catch((err) => {
-            console.error('Błąd kopiowania: ', err);
+            console.error('error', err);
         });
     };
 
@@ -34,7 +28,7 @@ const Chess = () => {
             <div className='ContainerChess'>
                 <div className="ChessContainer">
                 <div className='flex gap'>
-                        <span className='Chessdisplay' onClick={handleGoBack}>
+                        <span className='Chessdisplay' onClick={onBack}>
                             <FaArrowLeft className='arrowleftChess' style={{ color: 'white', fontSize: '24px' }} />
                         </span>
                         <p>Design</p>

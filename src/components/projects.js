@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react';
 import '../css/Projects.css'
+
 const Projects = forwardRef((props, projectRef) => {
+    const { onSelectProject } = props;
 
-
-    
     return (
         <div ref={projectRef} className='containerProjects'>
             <div className='ProjectsText'>
@@ -13,9 +13,9 @@ const Projects = forwardRef((props, projectRef) => {
 
             <div className='Project testPHP'>
                 <div className='PreView'>
-                    <a href='./Chess'>
-                        <img className='ProjectImg' src="Projects/Chess.png" alt="Logo" />
-                    </a>
+                <span onClick={() => onSelectProject('Chess')}>
+                        <img className='ProjectImg pointer' src="Projects/Chess.png" alt="Logo" />
+                    </span>
                 </div>
                 <div className='ProjectInfo'>
                     <div className='ProjectHeader'>
@@ -32,9 +32,6 @@ const Projects = forwardRef((props, projectRef) => {
                 <div className='ProjectInfo'>
                     <div className='ProjectHeader'>
                         <p className='ProjectName'>NFC TagApps</p>
-                        {/* <a target='_' href='https://github.com/pleewson/NFC-SocialApp-DisStream'>
-                            <p>repository</p>
-                        </a> */}
                     </div>
                     <p className='displayFlex'><span className='Front'>Techs:&nbsp;</span>React Native, NFC</p>
                     <p className='displayRuby'><span className='Front'>Functionalities:&nbsp;</span>The application allows data to be saved on NFC tags, such as Wi-Fi connections, mobile phone numbers, and URL links, making it easier to share and quickly access them.</p>
